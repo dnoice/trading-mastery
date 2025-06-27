@@ -1,3 +1,5 @@
+# 📁/📄 08_Tools_Resources\Python_Scripts\risk_calculator.py
+
 """
 Advanced Risk Management Calculator for Day Trading Mastery
 Includes position sizing, risk/reward, and Kelly Criterion

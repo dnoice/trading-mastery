@@ -1,3 +1,5 @@
+<!-- 📄 README.md -->
+
 # TRADING MASTERY ECOSYSTEM - COMPLETE BLUEPRINT
 
 The Comprehensive Guide to Building Wealth for Nick

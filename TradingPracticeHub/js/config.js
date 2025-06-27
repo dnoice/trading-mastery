@@ -1,3 +1,5 @@
+// 📁/📄 TradingPracticeHub\js\config.js
+
 // Application Configuration
 const CONFIG = {
     APP_NAME: 'Trading Mastery Hub',

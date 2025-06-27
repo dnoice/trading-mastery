@@ -1,3 +1,5 @@
+// 📁/📄 TradingPracticeHub\js\app.js
+
 // Main Application Controller
 class TradingMasteryApp {
     constructor() {
@@ -66,7 +68,7 @@ class TradingMasteryApp {
     }
 
     initModuleFeatures(moduleName) {
-        switch(moduleName) {
+        switch (moduleName) {
             case 'dashboard':
                 dashboard.refresh();
                 break;

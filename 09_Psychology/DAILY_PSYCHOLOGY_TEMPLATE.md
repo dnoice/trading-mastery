@@ -1,3 +1,5 @@
+<!-- 📁/📄 09_Psychology\DAILY_PSYCHOLOGY_TEMPLATE.md -->
+
 # TRADING PSYCHOLOGY LOG - [DATE]
 
 ## Pre-Market Mental State

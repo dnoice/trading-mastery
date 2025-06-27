@@ -1,3 +1,5 @@
+<!-- 📁/📄 04_Strategies\Gap_and_Go\STRATEGY_GUIDE.md -->
+
 # GAP AND GO STRATEGY GUIDE
 
 ## Overview

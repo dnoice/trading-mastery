@@ -1,3 +1,5 @@
+// 📁/📄 TradingPracticeHub\js\modules\psychology.js
+
 // Psychology Module
 
 class PsychologyTracker {
@@ -382,7 +384,7 @@ window.meditation = {
 
         // Play completion sound if available
         const audio = new Audio('assets/sounds/bell.mp3');
-        audio.play().catch(() => {});
+        audio.play().catch(() => { });
 
         this.reset();
     }

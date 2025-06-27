@@ -1,3 +1,5 @@
+// 📄 PHASE_TRACKER.jsonc
+
 {
     "current_phase": 1,
     "current_day": 0,

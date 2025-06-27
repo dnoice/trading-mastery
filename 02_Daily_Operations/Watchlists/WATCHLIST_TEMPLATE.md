@@ -1,3 +1,5 @@
+<!-- 📁/📄 02_Daily_Operations\Watchlists\WATCHLIST_TEMPLATE.md -->
+
 # WATCHLIST - [DATE]
 
 ## Market Context

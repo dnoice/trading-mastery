@@ -1,3 +1,5 @@
+// 📁/📄 TradingPracticeHub\js\modules\journal.js
+
 // Quick Journal Module
 
 class QuickJournal {

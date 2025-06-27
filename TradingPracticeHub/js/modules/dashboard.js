@@ -1,3 +1,5 @@
+// 📁/📄 TradingPracticeHub\js\modules\dashboard.js
+
 // Dashboard Module
 
 class Dashboard {

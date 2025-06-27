@@ -1,3 +1,5 @@
+// // 📁/📄 TradingPracticeHub\js\modules\risk.js
+
 // Risk Calculator Module
 
 class RiskCalculator {

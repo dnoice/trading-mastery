@@ -1,3 +1,5 @@
+<!-- 📁/📄 02_Daily_Operations\DAILY_CHECKLIST_TEMPLATE.md -->
+
 # DAILY TRADING CHECKLIST - [DATE]
 
 ## PRE-MARKET ROUTINE (5:30 AM - 9:30 AM)

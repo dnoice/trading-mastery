@@ -1,3 +1,5 @@
+// 📁/📄 TradingPracticeHub\js\utils\storage.js
+
 // Local Storage Management
 
 class StorageManager {
@@ -109,7 +111,7 @@ class StorageManager {
             bestStreak: 0
         });
 
-        switch(statType) {
+        switch (statType) {
             case 'trade':
                 stats.totalTrades++;
                 if (value > 0) {

@@ -1,3 +1,5 @@
+// 📁/📄 TradingPracticeHub\js\components\charts.js
+
 // Chart Components
 
 class ChartManager {

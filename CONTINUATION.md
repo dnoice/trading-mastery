@@ -1,3 +1,5 @@
+<!-- 📄 CONTINUATION.md -->
+
 # Trading Mastery Session Continuation Document
 
 > *Last Updated: Thurday, Jun 26, 2025 - Schwab Account Submitted*
@@ -153,8 +155,8 @@ C:/Dev/TradingMastery/
 │   ├── 📁 Platform_Settings/            # thinkorswim setup
 │   │   └── 📄 PLATFORM_SETUP_GUIDE.md   # Empty File ❌
 │   ├── 📁 Excel_Templates/              # Spreadsheets
-│   │   └── create_excel_journal.py      # Template creator - syntax errors ❌
 │   ├── 📁 Python_Scripts/               # Automation tools
+│   │   ├── create_excel_templates .py   # Templates creator ❌
 │   │   ├── risk_calculator.py           # Position sizing
 │   │   └── risk_functions.py            # Quick calculations
 │   ├── 📁 Useful_Links/                 # Resource links

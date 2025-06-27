@@ -1,3 +1,5 @@
+// 📁/📄 TradingPracticeHub\js\modules\simulator.js
+
 // Trade Simulator Module
 
 class TradeSimulator {
@@ -390,14 +392,13 @@ class TradeSimulator {
                         <div style="color: var(--color-text-secondary);">Win Rate</div>
                         <div style="font-size: 2rem; font-weight: bold; color: var(--color-accent-green);">
                             ${this.sessionStats.trades > 0 ?
-                                (this.sessionStats.wins / this.sessionStats.trades * 100).toFixed(1) : 0}%
+                (this.sessionStats.wins / this.sessionStats.trades * 100).toFixed(1) : 0}%
                         </div>
                     </div>
                     <div style="grid-column: span 2;">
                         <div style="color: var(--color-text-secondary);">Session P&L</div>
-                        <div style="font-size: 3rem; font-weight: bold; color: ${
-                            this.sessionStats.pnl >= 0 ? 'var(--color-accent-green)' : 'var(--color-accent-red)'
-                        };">
+                        <div style="font-size: 3rem; font-weight: bold; color: ${this.sessionStats.pnl >= 0 ? 'var(--color-accent-green)' : 'var(--color-accent-red)'
+            };">
                             ${helpers.formatCurrency(this.sessionStats.pnl)}
                         </div>
                     </div>

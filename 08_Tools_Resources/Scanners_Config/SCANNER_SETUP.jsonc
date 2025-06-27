@@ -1,3 +1,5 @@
+// 📁/📄08_Tools_Resources\Scanners_Config\SCANNER_SETUP.jsonc
+
 {
     "pre_market_scanners": {
         "gap_scanner": {

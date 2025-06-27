@@ -1,3 +1,5 @@
+// 📁/📄 TradingPracticeHub/js/modules/patterns.js
+
 // Pattern Practice Module
 
 class PatternPractice {
@@ -140,7 +142,7 @@ class PatternPractice {
             let price = basePrice;
 
             // Add pattern-specific price movements
-            switch(patternName) {
+            switch (patternName) {
                 case 'Bull Flag':
                     if (i < 20) price = basePrice + i * 0.5;
                     else if (i < 35) price = basePrice + 10 - (i - 20) * 0.1;

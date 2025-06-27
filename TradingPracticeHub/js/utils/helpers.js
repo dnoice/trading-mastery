@@ -1,3 +1,5 @@
+// 📁/📄 TradingPracticeHub\js\utils\helpers.js
+
 // Utility Helper Functions
 
 // Format currency
@@ -84,7 +86,7 @@ function debounce(func, wait) {
 // Throttle function
 function throttle(func, limit) {
     let inThrottle;
-    return function(...args) {
+    return function (...args) {
         if (!inThrottle) {
             func.apply(this, args);
             inThrottle = true;
@@ -123,7 +125,7 @@ function isMarketOpen() {
     const marketClose = moment('16:00', 'HH:mm');
 
     return now.isBetween(marketOpen, marketClose) &&
-           now.day() !== 0 && now.day() !== 6;
+        now.day() !== 0 && now.day() !== 6;
 }
 
 // Validate trade entry
