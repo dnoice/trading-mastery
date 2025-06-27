@@ -54,10 +54,12 @@
 
 ### What Affected My Trading Today
 
-**Positive Influences:**
+### Positive Influences
+
 -
 
-**Negative Influences:**
+### Negative Influences
+
 -
 
 ### Discipline Score Card
