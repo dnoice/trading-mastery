@@ -1,0 +1,401 @@
+/* Component Styles */
+
+/* Cards */
+.card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    transition: all var(--transition-base);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: var(--space-lg);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--space-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    transition: all var(--transition-fast);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color-accent-green);
+    box-shadow: 0 0 0 3px rgba(0, 211, 149, 0.1);
+}
+
+/* Charts */
+.chart-container {
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    height: 400px;
+    position: relative;
+}
+
+/* Action Buttons */
+.action-btn {
+    background: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    text-align: center;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    background: var(--gradient-green);
+    color: var(--color-bg-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow-green);
+}
+
+.action-btn i {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: var(--space-sm);
+}
+
+/* Pattern Practice */
+.pattern-practice-container {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+}
+
+.pattern-controls {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: center;
+    margin-bottom: var(--space-xl);
+}
+
+.pattern-select {
+    flex: 1;
+}
+
+.score-display {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+}
+
+.score-display i {
+    color: var(--color-accent-yellow);
+}
+
+.pattern-display {
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+}
+
+.pattern-answers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+}
+
+.answer-btn {
+    padding: var(--space-lg);
+    background: var(--color-bg-tertiary);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-lg);
+    transition: all var(--transition-fast);
+}
+
+.answer-btn:hover {
+    background: var(--color-bg-card);
+    border-color: var(--color-accent-blue);
+}
+
+.answer-btn.correct {
+    background: var(--gradient-green);
+    color: var(--color-bg-primary);
+    border-color: var(--color-accent-green);
+}
+
+.answer-btn.incorrect {
+    background: var(--gradient-red);
+    color: var(--color-text-primary);
+    border-color: var(--color-accent-red);
+}
+
+/* Risk Calculator */
+.calc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
+    margin-bottom: var(--space-xl);
+}
+
+.calc-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+}
+
+.calc-card h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.input-group {
+    margin-bottom: var(--space-md);
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: var(--space-xs);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.results-card {
+    background: var(--gradient-dark);
+    border: 2px solid var(--color-accent-green);
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-item strong {
+    color: var(--color-accent-green);
+    font-size: var(--font-size-lg);
+}
+
+/* Trade Simulator */
+.simulator-container {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+}
+
+.sim-controls {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+    flex-wrap: wrap;
+}
+
+.sim-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-xl);
+}
+
+.sim-chart {
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    height: 500px;
+}
+
+.sim-panel {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.sim-info,
+.sim-positions,
+.sim-stats {
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+}
+
+.info-row,
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-sm) 0;
+}
+
+.trade-btn {
+    width: 100%;
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-sm);
+}
+
+.buy-btn {
+    background: var(--gradient-green);
+    color: var(--color-bg-primary);
+}
+
+.sell-btn {
+    background: var(--gradient-red);
+    color: var(--color-text-primary);
+}
+
+/* Psychology Module */
+.psych-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
+    margin-bottom: var(--space-xl);
+}
+
+.psych-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+}
+
+.mood-selector {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.mood-btn {
+    padding: var(--space-md);
+    background: var(--color-bg-tertiary);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all var(--transition-fast);
+}
+
+.mood-btn:hover {
+    transform: scale(1.05);
+}
+
+.mood-btn.selected {
+    border-color: var(--color-accent-green);
+    background: var(--color-bg-secondary);
+}
+
+.mood-btn i {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: var(--space-xs);
+}
+
+/* Meditation Timer */
+.timer-display {
+    font-size: 4rem;
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    color: var(--color-accent-green);
+    margin: var(--space-xl) 0;
+    font-family: var(--font-family-mono);
+}
+
+.timer-controls {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    margin-bottom: var(--space-lg);
+}
+
+.btn-calm {
+    background: var(--gradient-purple);
+    color: var(--color-text-primary);
+}
+
+/* Affirmations */
+.affirmation-display {
+    text-align: center;
+}
+
+#dailyAffirmation {
+    font-size: var(--font-size-xl);
+    font-style: italic;
+    color: var(--color-accent-green);
+    margin-bottom: var(--space-xl);
+    min-height: 3em;
+}
+
+.btn-inspire {
+    background: var(--gradient-blue);
+    color: var(--color-text-primary);
+}
+
+/* Tilt Detector */
+.tilt-check {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) 0;
+    cursor: pointer;
+}
+
+.tilt-check input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--color-accent-green);
+}
+
+#tiltResult {
+    margin-top: var(--space-lg);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    font-weight: var(--font-weight-semibold);
+}
+
+#tiltResult.safe {
+    background: rgba(0, 211, 149, 0.1);
+    color: var(--color-accent-green);
+    border: 1px solid var(--color-accent-green);
+}
+
+#tiltResult.warning {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--color-warning);
+    border: 1px solid var(--color-warning);
+}
+
+#tiltResult.danger {
+    background: rgba(246, 70, 93, 0.1);
+    color: var(--color-accent-red);
+    border: 1px solid var(--color-accent-red);
+}

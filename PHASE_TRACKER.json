@@ -1,0 +1,22 @@
+{
+    "current_phase": 1,
+    "current_day": 0,
+    "phase_start_date": "2025-06-26",
+    "total_days_in_program": 0,
+    "milestones_completed": [],
+    "next_milestone": "Schwab account approval, thinkorswim setup, first paper trade",
+    "phase_history": [],
+    "current_month_allocation": 1000,
+    "total_invested": 0,
+    "current_account_value": 0,
+    "all_time_high": 0,
+    "max_drawdown": 0,
+    "rules_violations": [],
+    "emergency_protocols_triggered": [],
+    "key_lessons_learned": [],
+    "account_status": "Pending Schwab approval",
+    "broker": "Charles Schwab",
+    "platform": "thinkorswim",
+    "account_type": "Cash",
+    "funding_source": "VA Disability Compensation"
+}

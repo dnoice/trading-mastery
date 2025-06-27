@@ -1,0 +1,90 @@
+{
+    "pre_market_scanners": {
+        "gap_scanner": {
+            "name": "Pre-Market Gappers",
+            "criteria": {
+                "gap_percent": "> 4%",
+                "price_range": "$5 - $500",
+                "volume": "> 500,000",
+                "float": "< 100M preferred",
+                "market_cap": "> $100M"
+            },
+            "time_to_run": "6:00 AM - 9:25 AM",
+            "platforms": [
+                "ThinkorSwim",
+                "Trade Ideas",
+                "Finviz"
+            ]
+        },
+        "volume_scanner": {
+            "name": "Unusual Volume",
+            "criteria": {
+                "volume_vs_average": "> 200%",
+                "price": "> $10",
+                "trades": "> 1000 in pre-market"
+            }
+        },
+        "news_scanner": {
+            "name": "Catalyst Scanner",
+            "keywords": [
+                "earnings",
+                "FDA",
+                "merger",
+                "partnership",
+                "guidance"
+            ],
+            "exclude": [
+                "reverse split",
+                "offering",
+                "bankruptcy"
+            ]
+        }
+    },
+    "intraday_scanners": {
+        "momentum_scanner": {
+            "name": "Momentum Movers",
+            "criteria": {
+                "price_change": "> 2% in 5 minutes",
+                "volume_surge": "> 300% of 5-min average",
+                "new_high": "Making new HOD"
+            }
+        },
+        "reversal_scanner": {
+            "name": "Reversal Candidates",
+            "criteria": {
+                "rsi": "< 30 or > 70",
+                "near_support": "Within 1% of major support",
+                "volume_spike": "On reversal candle"
+            }
+        }
+    },
+    "platforms_setup": {
+        "thinkorswim": {
+            "workspace": "Day_Trading_Master",
+            "charts": [
+                "1min",
+                "5min",
+                "Daily"
+            ],
+            "indicators": [
+                "VWAP",
+                "9EMA",
+                "20EMA",
+                "Volume"
+            ],
+            "scan_queries": "See TOS_Scan_Queries.txt for code"
+        },
+        "tradingview": {
+            "alerts": [
+                "Break above VWAP",
+                "Volume spike",
+                "New HOD/LOD"
+            ],
+            "watchlists": [
+                "Gappers",
+                "In Play",
+                "Swing Candidates"
+            ]
+        }
+    }
+}

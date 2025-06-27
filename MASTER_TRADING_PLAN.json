@@ -1,0 +1,89 @@
+{
+    "mission": "Transform into profitable trader supporting family - specifically Nick",
+    "created_date": "2025-06-26",
+    "start_date": "2025-06-26",
+    "phases": {
+        "phase1": {
+            "name": "Foundation",
+            "duration": "Days 0-30",
+            "goals": [
+                "Master trading platforms",
+                "Understand basic concepts",
+                "Complete 100 paper trades",
+                "Achieve 50% win rate on paper"
+            ],
+            "focus_areas": [
+                "Platform mastery",
+                "Candlesticks",
+                "Support/Resistance",
+                "Risk management"
+            ]
+        },
+        "phase2": {
+            "name": "Paper Trading Intensive",
+            "duration": "Days 31-90",
+            "goals": [
+                "60%+ win rate",
+                "1:2 risk/reward minimum",
+                "Consistent daily routine",
+                "Master 2-3 strategies"
+            ],
+            "focus_areas": [
+                "Gap and Go",
+                "ORB",
+                "VWAP trading",
+                "Psychology"
+            ]
+        },
+        "phase3": {
+            "name": "Real Money Transition",
+            "duration": "Days 91-180",
+            "goals": [
+                "Preserve capital",
+                "10% account growth",
+                "$500+/month profit",
+                "No revenge trading"
+            ],
+            "focus_areas": [
+                "Swing trading",
+                "Position sizing",
+                "Emotional control"
+            ]
+        },
+        "phase4": {
+            "name": "Scaling & Optimization",
+            "duration": "Days 181-365",
+            "goals": [
+                "Build to $15k+ account",
+                "Learn options basics",
+                "Consistent monthly profits",
+                "Prepare for day trading"
+            ],
+            "focus_areas": [
+                "Advanced strategies",
+                "Options",
+                "Scaling positions"
+            ]
+        }
+    },
+    "capital": {
+        "monthly_allocation": 1000,
+        "starting_balance": 0,
+        "target_account_size": 25000,
+        "timeline_months": "16-20",
+        "contingency_fund": "Keep 3 months expenses separate"
+    },
+    "risk_rules": {
+        "max_risk_per_trade": "1-2%",
+        "max_daily_loss": "5%",
+        "max_weekly_loss": "10%",
+        "position_sizing": "Calculated based on stop loss",
+        "revenge_trading": "Prohibited - walk away after 2 losses",
+        "overtrading": "Max 5 trades per day when learning"
+    },
+    "broker_accounts": {
+        "paper_trading": "TD Ameritrade thinkorswim",
+        "real_trading": "TD Ameritrade or Fidelity",
+        "backup": "Webull or E*TRADE"
+    }
+}

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Mastery Practice Hub | For Nick</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <i class="fas fa-chart-line loading-icon"></i>
+            <h2>Trading Mastery Hub</h2>
+            <p>Loading your practice environment...</p>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <i class="fas fa-chart-candlestick logo-icon"></i>
+                <h1 class="logo-text">Trading Mastery Hub</h1>
+                <span class="logo-tagline">For Nick 💪</span>
+            </div>
+
+            <nav class="main-nav">
+                <button class="nav-btn active" data-module="dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </button>
+                <button class="nav-btn" data-module="patterns">
+                    <i class="fas fa-shapes"></i>
+                    <span>Pattern Practice</span>
+                </button>
+                <button class="nav-btn" data-module="risk">
+                    <i class="fas fa-calculator"></i>
+                    <span>Risk Calculator</span>
+                </button>
+                <button class="nav-btn" data-module="simulator">
+                    <i class="fas fa-play-circle"></i>
+                    <span>Trade Simulator</span>
+                </button>
+                <button class="nav-btn" data-module="journal">
+                    <i class="fas fa-book"></i>
+                    <span>Quick Journal</span>
+                </button>
+                <button class="nav-btn" data-module="psychology">
+                    <i class="fas fa-brain"></i>
+                    <span>Psychology</span>
+                </button>
+            </nav>
+
+            <div class="header-stats">
+                <div class="stat-item">
+                    <i class="fas fa-clock"></i>
+                    <span id="marketTime">--:--</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-fire"></i>
+                    <span id="streakCounter">0 Day Streak</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Dashboard Module -->
+        <section id="dashboard" class="module active">
+            <div class="module-header">
+                <h2><i class="fas fa-tachometer-alt"></i> Trading Dashboard</h2>
+                <p>Your daily command center for trading excellence</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Quick Stats -->
+                <div class="dashboard-card stats-card">
+                    <h3><i class="fas fa-chart-pie"></i> Today's Performance</h3>
+                    <div class="stats-grid">
+                        <div class="stat">
+                            <span class="stat-value" id="winRate">0%</span>
+                            <span class="stat-label">Win Rate</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="profitFactor">0.0</span>
+                            <span class="stat-label">Profit Factor</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="totalTrades">0</span>
+                            <span class="stat-label">Total Trades</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="netPnL">$0</span>
+                            <span class="stat-label">Net P&L</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Market Overview -->
+                <div class="dashboard-card market-card">
+                    <h3><i class="fas fa-globe-americas"></i> Market Overview</h3>
+                    <div id="marketOverview" class="market-grid">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="dashboard-card actions-card">
+                    <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+                    <div class="actions-grid">
+                        <button class="action-btn" onclick="app.startQuickTrade()">
+                            <i class="fas fa-rocket"></i>
+                            <span>Quick Trade</span>
+                        </button>
+                        <button class="action-btn" onclick="app.reviewLastTrade()">
+                            <i class="fas fa-history"></i>
+                            <span>Review Last</span>
+                        </button>
+                        <button class="action-btn" onclick="app.runScanner()">
+                            <i class="fas fa-search"></i>
+                            <span>Run Scanner</span>
+                        </button>
+                        <button class="action-btn" onclick="app.checkRules()">
+                            <i class="fas fa-list-check"></i>
+                            <span>Check Rules</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Daily Checklist -->
+                <div class="dashboard-card checklist-card">
+                    <h3><i class="fas fa-tasks"></i> Daily Checklist</h3>
+                    <div id="dailyChecklist" class="checklist">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mini Chart -->
+            <div class="dashboard-card chart-card">
+                <h3><i class="fas fa-chart-line"></i> Practice Chart</h3>
+                <div id="practiceChart" class="chart-container">
+                    <canvas id="miniChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pattern Practice Module -->
+        <section id="patterns" class="module">
+            <div class="module-header">
+                <h2><i class="fas fa-shapes"></i> Pattern Recognition Practice</h2>
+                <p>Master chart patterns through repetition</p>
+            </div>
+
+            <div class="pattern-practice-container">
+                <div class="pattern-controls">
+                    <label for="patternType" class="visually-hidden">Pattern Type</label>
+                    <select id="patternType" class="pattern-select" title="Select pattern type">
+                        <option value="all">All Patterns</option>
+                        <option value="bullish">Bullish Patterns</option>
+                        <option value="bearish">Bearish Patterns</option>
+                        <option value="reversal">Reversal Patterns</option>
+                        <option value="continuation">Continuation Patterns</option>
+                    </select>
+
+                    <button type="button" class="btn btn-primary" onclick="patterns.newPattern()">
+                        <i class="fas fa-sync"></i> New Pattern
+                    </button>
+
+                    <div class="score-display">
+                        <i class="fas fa-trophy"></i>
+                        <span id="patternScore">Score: 0</span>
+                    </div>
+                </div>
+
+                <div class="pattern-display">
+                    <canvas id="patternChart"></canvas>
+                    <div class="pattern-info">
+                        <p id="patternQuestion">Loading pattern...</p>
+                    </div>
+                </div>
+
+                <div class="pattern-answers">
+                    <button type="button" class="answer-btn" data-answer="1" title="Answer 1">1</button>
+                    <button type="button" class="answer-btn" data-answer="2" title="Answer 2">2</button>
+                    <button type="button" class="answer-btn" data-answer="3" title="Answer 3">3</button>
+                    <button type="button" class="answer-btn" data-answer="4" title="Answer 4">4</button>
+                </div>
+
+                <div class="pattern-feedback" id="patternFeedback"></div>
+            </div>
+        </section>
+
+        <!-- Risk Calculator Module -->
+        <section id="risk" class="module">
+            <div class="module-header">
+                <h2><i class="fas fa-calculator"></i> Advanced Risk Calculator</h2>
+                <p>Never blow up your account - calculate perfect position sizes</p>
+            </div>
+
+            <div class="risk-calculator-container">
+                <div class="calc-grid">
+                    <!-- Account Info -->
+                    <div class="calc-card">
+                        <h3><i class="fas fa-wallet"></i> Account Info</h3>
+                        <div class="input-group">
+                            <label for="accountSize">Account Size</label>
+                            <input type="number" id="accountSize" value="5000" step="100"
+                                placeholder="Enter account size" title="Account Size">
+                        </div>
+                        <div class="input-group">
+                            <label for="riskPercent">Risk Per Trade (%)</label>
+                            <input type="number" id="riskPercent" value="1" step="0.1" max="5"
+                                placeholder="Risk percent" title="Risk Per Trade (%)">
+                        </div>
+                        <div class="input-group">
+                            <label for="riskAmount">Risk Amount</label>
+                            <input type="number" id="riskAmount" readonly placeholder="Calculated risk amount"
+                                title="Risk Amount">
+                        </div>
+                    </div>
+
+                    <!-- Trade Setup -->
+                    <div class="calc-card">
+                        <h3><i class="fas fa-crosshairs"></i> Trade Setup</h3>
+                        <div class="input-group">
+                            <label for="entryPrice">Entry Price</label>
+                            <input type="number" id="entryPrice" step="0.01" placeholder="Entry price"
+                                title="Entry Price">
+                        </div>
+                        <div class="input-group">
+                            <label for="stopLoss">Stop Loss</label>
+                            <input type="number" id="stopLoss" step="0.01" placeholder="Stop loss" title="Stop Loss">
+                        </div>
+                        <div class="input-group">
+                            <label for="targetPrice">Target Price</label>
+                            <input type="number" id="targetPrice" step="0.01" placeholder="Target price"
+                                title="Target Price">
+                        </div>
+                    </div>
+
+                    <!-- Results -->
+                    <div class="calc-card results-card">
+                        <h3><i class="fas fa-chart-bar"></i> Position Details</h3>
+                        <div class="result-item">
+                            <span>Shares to Buy:</span>
+                            <strong id="sharesToBuy">0</strong>
+                        </div>
+                        <div class="result-item">
+                            <span>Position Size:</span>
+                            <strong id="positionSize">$0</strong>
+                        </div>
+                        <div class="result-item">
+                            <span>Risk/Reward:</span>
+                            <strong id="riskReward">0:0</strong>
+                        </div>
+                        <div class="result-item">
+                            <span>Potential Profit:</span>
+                            <strong id="potentialProfit">$0</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Risk Display -->
+                <div class="risk-visual">
+                    <canvas id="riskChart"></canvas>
+                </div>
+
+                <!-- Kelly Criterion -->
+                <div class="calc-card kelly-card">
+                    <h3><i class="fas fa-percentage"></i> Kelly Criterion Calculator</h3>
+                    <div class="kelly-inputs">
+                        <div class="input-group">
+                            <label for="kellyWinRate">Win Rate (%)</label>
+                            <input type="number" id="kellyWinRate" value="60" step="1" placeholder="Win rate"
+                                title="Win Rate (%)">
+                        </div>
+                        <div class="input-group">
+                            <label for="avgWin">Avg Win ($)</label>
+                            <input type="number" id="avgWin" value="150" step="10" placeholder="Average win"
+                                title="Avg Win ($)">
+                        </div>
+                        <div class="input-group">
+                            <label for="avgLoss">Avg Loss ($)</label>
+                            <input type="number" id="avgLoss" value="100" step="10" placeholder="Average loss"
+                                title="Avg Loss ($)">
+                        </div>
+                    </div>
+                    <div class="kelly-results">
+                        <p>Optimal Risk: <strong id="kellyPercent">0%</strong></p>
+                        <p>Safe Kelly (1/4): <strong id="safeKelly">0%</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trade Simulator Module -->
+        <section id="simulator" class="module">
+            <div class="module-header">
+                <h2><i class="fas fa-play-circle"></i> Real-Time Trade Simulator</h2>
+                <p>Practice with real market conditions - no risk</p>
+            </div>
+
+            <div class="simulator-container">
+                <div class="sim-controls">
+                    <button type="button" class="btn btn-success" onclick="simulator.start()">
+                        <i class="fas fa-play"></i> Start Session
+                    </button>
+                    <button type="button" class="btn btn-danger" onclick="simulator.stop()">
+                        <i class="fas fa-stop"></i> End Session
+                    </button>
+                    <label for="simSpeed" class="visually-hidden">Simulation Speed</label>
+                    <select id="simSpeed" class="sim-select" title="Simulation speed">
+                        <option value="1">1x Speed</option>
+                        <option value="2">2x Speed</option>
+                        <option value="5">5x Speed</option>
+                        <option value="10">10x Speed</option>
+                    </select>
+                    <label for="simTicker" class="visually-hidden">Simulation Ticker</label>
+                    <select id="simTicker" class="sim-select" title="Simulation ticker">
+                        <option value="SPY">SPY</option>
+                        <option value="AAPL">AAPL</option>
+                        <option value="TSLA">TSLA</option>
+                        <option value="QQQ">QQQ</option>
+                    </select>
+                </div>
+
+                <div class="sim-main">
+                    <div class="sim-chart">
+                        <canvas id="simChart"></canvas>
+                    </div>
+
+                    <div class="sim-panel">
+                        <div class="sim-info">
+                            <h4>Market Data</h4>
+                            <div class="info-row">
+                                <span>Price:</span>
+                                <strong id="simPrice">$0.00</strong>
+                            </div>
+                            <div class="info-row">
+                                <span>Volume:</span>
+                                <strong id="simVolume">0</strong>
+                            </div>
+                            <div class="info-row">
+                                <span>Bid/Ask:</span>
+                                <strong id="simBidAsk">0.00/0.00</strong>
+                            </div>
+                        </div>
+
+                        <div class="sim-actions">
+                            <button type="button" class="trade-btn buy-btn" onclick="simulator.buy()">
+                                <i class="fas fa-arrow-up"></i> BUY
+                            </button>
+                            <button type="button" class="trade-btn sell-btn" onclick="simulator.sell()">
+                                <i class="fas fa-arrow-down"></i> SELL
+                            </button>
+                            <label for="simShares" class="visually-hidden">Shares</label>
+                            <input type="number" id="simShares" value="100" min="1" placeholder="Shares" title="Shares">
+                        </div>
+
+                        <div class="sim-positions">
+                            <h4>Open Positions</h4>
+                            <div id="positionsList"></div>
+                        </div>
+
+                        <div class="sim-stats">
+                            <div class="stat-row">
+                                <span>Session P&L:</span>
+                                <strong id="sessionPnL">$0.00</strong>
+                            </div>
+                            <div class="stat-row">
+                                <span>Total Trades:</span>
+                                <strong id="sessionTrades">0</strong>
+                            </div>
+                            <div class="stat-row">
+                                <span>Win Rate:</span>
+                                <strong id="sessionWinRate">0%</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Journal Module -->
+        <section id="journal" class="module">
+            <div class="module-header">
+                <h2><i class="fas fa-book"></i> Quick Trade Journal</h2>
+                <p>Capture lessons while they're fresh</p>
+            </div>
+
+            <div class="journal-container">
+                <div class="journal-form">
+                    <h3>Log New Trade</h3>
+                    <form id="tradeForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="jSymbol">Symbol</label>
+                                <input type="text" id="jSymbol" required placeholder="Symbol" title="Symbol">
+                            </div>
+                            <div class="form-group">
+                                <label for="jStrategy">Strategy</label>
+                                <select id="jStrategy" title="Strategy">
+                                    <option>Gap and Go</option>
+                                    <option>ORB</option>
+                                    <option>VWAP Bounce</option>
+                                    <option>Reversal</option>
+                                    <option>Momentum</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="jEntry">Entry</label>
+                                <input type="number" id="jEntry" step="0.01" required placeholder="Entry price"
+                                    title="Entry">
+                            </div>
+                            <div class="form-group">
+                                <label for="jExit">Exit</label>
+                                <input type="number" id="jExit" step="0.01" required placeholder="Exit price"
+                                    title="Exit">
+                            </div>
+                            <div class="form-group">
+                                <label for="jShares">Shares</label>
+                                <input type="number" id="jShares" required placeholder="Shares" title="Shares">
+                            </div>
+                            <div class="form-group">
+                                <label for="jResult">Result</label>
+                                <select id="jResult" title="Result">
+                                    <option value="win">Win</option>
+                                    <option value="loss">Loss</option>
+                                    <option value="scratch">Scratch</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jWentWell">What went well?</label>
+                            <textarea id="jWentWell" rows="2" placeholder="Describe what went well"
+                                title="What went well?"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jImprove">What could improve?</label>
+                            <textarea id="jImprove" rows="2" placeholder="Describe what could improve"
+                                title="What could improve?"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jEmotions">Emotions (1-10)</label>
+                            <input type="range" id="jEmotions" min="1" max="10" value="5" title="Emotions">
+                            <span id="emotionValue">5</span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Save Trade
+                        </button>
+                    </form>
+                </div>
+
+                <div class="journal-stats">
+                    <h3>Today's Summary</h3>
+                    <div id="todaySummary"></div>
+
+                    <h3>Recent Trades</h3>
+                    <div id="recentTrades"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Psychology Module -->
+        <section id="psychology" class="module">
+            <div class="module-header">
+                <h2><i class="fas fa-brain"></i> Trading Psychology Training</h2>
+                <p>Master your mind, master the markets</p>
+            </div>
+
+            <div class="psychology-container">
+                <div class="psych-grid">
+                    <!-- Mood Tracker -->
+                    <div class="psych-card mood-card">
+                        <h3><i class="fas fa-smile"></i> Current Mood</h3>
+                        <div class="mood-selector">
+                            <button class="mood-btn" data-mood="confident">
+                                <i class="fas fa-grin-stars"></i>
+                                <span>Confident</span>
+                            </button>
+                            <button class="mood-btn" data-mood="focused">
+                                <i class="fas fa-crosshairs"></i>
+                                <span>Focused</span>
+                            </button>
+                            <button class="mood-btn" data-mood="anxious">
+                                <i class="fas fa-meh"></i>
+                                <span>Anxious</span>
+                            </button>
+                            <button class="mood-btn" data-mood="frustrated">
+                                <i class="fas fa-angry"></i>
+                                <span>Frustrated</span>
+                            </button>
+                        </div>
+                        <div class="mood-history">
+                            <canvas id="moodChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Meditation Timer -->
+                    <div class="psych-card meditation-card">
+                        <h3><i class="fas fa-om"></i> Quick Meditation</h3>
+                        <div class="meditation-timer">
+                            <div class="timer-display" id="meditationTimer">5:00</div>
+                            <div class="timer-controls">
+                                <button onclick="meditation.start()" class="btn btn-calm">
+                                    <i class="fas fa-play"></i> Start
+                                </button>
+                                <button onclick="meditation.reset()" class="btn btn-secondary">
+                                    <i class="fas fa-redo"></i> Reset
+                                </button>
+                            </div>
+                            <label for="meditationDuration" class="visually-hidden">Meditation Duration</label>
+                            <select id="meditationDuration" title="Meditation duration">
+                                <option value="5">5 minutes</option>
+                                <option value="10">10 minutes</option>
+                                <option value="15">15 minutes</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Affirmations -->
+                    <div class="psych-card affirmation-card">
+                        <h3><i class="fas fa-quote-left"></i> Daily Affirmation</h3>
+                        <div class="affirmation-display">
+                            <p id="dailyAffirmation"></p>
+                            <button onclick="psychology.newAffirmation()" class="btn btn-inspire">
+                                <i class="fas fa-sync"></i> New Affirmation
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tilt Detector -->
+                    <div class="psych-card tilt-card">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Tilt Detector</h3>
+                        <div class="tilt-questions">
+                            <label class="tilt-check">
+                                <input type="checkbox" id="tilt1">
+                                <span>Feeling urge to revenge trade?</span>
+                            </label>
+                            <label class="tilt-check">
+                                <input type="checkbox" id="tilt2">
+                                <span>Want to increase position size?</span>
+                            </label>
+                            <label class="tilt-check">
+                                <input type="checkbox" id="tilt3">
+                                <span>Ignoring your rules?</span>
+                            </label>
+                            <label class="tilt-check">
+                                <input type="checkbox" id="tilt4">
+                                <span>Chasing missed moves?</span>
+                            </label>
+                        </div>
+                        <button onclick="psychology.checkTilt()" class="btn btn-warning">
+                            <i class="fas fa-diagnoses"></i> Check Status
+                        </button>
+                        <div id="tiltResult"></div>
+                    </div>
+                </div>
+
+                <!-- Psychology Exercises -->
+                <div class="psych-exercises">
+                    <h3><i class="fas fa-dumbbell"></i> Mental Exercises</h3>
+                    <div class="exercise-list">
+                        <button class="exercise-btn" onclick="psychology.startExercise('visualization')">
+                            <i class="fas fa-eye"></i> Trade Visualization
+                        </button>
+                        <button class="exercise-btn" onclick="psychology.startExercise('breathing')">
+                            <i class="fas fa-wind"></i> Box Breathing
+                        </button>
+                        <button class="exercise-btn" onclick="psychology.startExercise('review')">
+                            <i class="fas fa-clipboard-check"></i> Rule Review
+                        </button>
+                        <button class="exercise-btn" onclick="psychology.startExercise('gratitude')">
+                            <i class="fas fa-heart"></i> Gratitude Practice
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p><i class="fas fa-heart"></i> Built for Nick | Trading with Purpose</p>
+            <p id="currentDate"></p>
+        </div>
+    </footer>
+
+    <!-- Notification Container -->
+    <div id="notificationContainer"></div>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
+
+    <!-- App Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/utils/helpers.js"></script>
+    <script src="js/utils/storage.js"></script>
+    <script src="js/utils/notifications.js"></script>
+    <script src="js/modules/dashboard.js"></script>
+    <script src="js/modules/patterns.js"></script>
+    <script src="js/modules/risk.js"></script>
+    <script src="js/modules/simulator.js"></script>
+    <script src="js/modules/journal.js"></script>
+    <script src="js/modules/psychology.js"></script>
+    <script src="js/components/charts.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
