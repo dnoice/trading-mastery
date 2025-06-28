@@ -1,0 +1,21 @@
+{
+  "name": "Python_Scripts",
+  "type": "directory",
+  "children": [
+    {
+      "name": "_directory_analysis",
+      "type": "directory",
+      "children": []
+    },
+    {
+      "name": "risk_calculator.py",
+      "type": "file",
+      "size": "7.1KB"
+    },
+    {
+      "name": "scan_directory.py",
+      "type": "file",
+      "size": "11.8KB"
+    }
+  ]
+}

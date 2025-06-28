@@ -25,13 +25,14 @@ This is not just a trading education system. This is a promise to my brother Nic
 | **Account Status** | Schwab Application Submitted (Pending Approval) |
 | **Account Type** | Cash (Not Margin) |
 | **Options Trading** | Disabled (Will revisit Month 12+) |
-| **Platform** | thinkorswim® |
+| **Platform** | thinkorswim®, Webull Desktop (until approved) |
+| **Temporary Trading Platform** | Webull Desktop (until Schwab approved) |
 | **Monthly Capital** | $1,000 (VA Disability) |
 | **Target Account Size** | $25,000 |
 | **Timeline** | 16-20 months |
-| **Current Savings** | $0 |
-| **Practice Hub** | ✅ Fully Operational |
-| **Infrastructure** | ✅ Complete |
+| **Current Savings** | $5,000 (NOT FOR TRADING) |
+| **Practice Hub** | ✅ Fully Operational (Front End) |
+| **Infrastructure** | ✅ Semi-Complete |
 
 ---
 
@@ -43,7 +44,7 @@ This is not just a trading education system. This is a promise to my brother Nic
 
 #### Objectives
 
-- Master thinkorswim platform
+- Master thinkorswim platform/ Webull Desktop
 - Understand basic concepts (candlesticks, support/resistance, volume)
 - Complete 100+ paper trades
 - Achieve 50%+ win rate on paper
@@ -58,7 +59,7 @@ This is not just a trading education system. This is a promise to my brother Nic
 - **7:30 AM**: Claude check-in
 - **9:30 AM**: Market observation (NO TRADING first 30 min)
 - **4:00 PM**: End of day review
-- **7:00 PM**: Education time (1-2 hours)
+- **5:00 PM**: Education time (2-4 hours)
 
 #### Key Deliverables
 
@@ -69,7 +70,7 @@ This is not just a trading education system. This is a promise to my brother Nic
 
 ### 📈 PHASE 2: PAPER TRADING INTENSIVE (Days 31-90)
 
-#### Phase 2 Objectives   <!-- Renamed to avoid duplicate heading -->
+#### Phase 2 Objectives
 
 - Achieve 60%+ win rate consistently
 - Master 2-3 core strategies
